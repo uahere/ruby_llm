@@ -11,14 +11,14 @@ module RubyLLM
 
         def render_payload(messages, tools:, temperature:, model:, stream: false) # rubocop:disable Lint/UnusedMethodArgument
           @model = model # Store model for completion_url/stream_url
-          payload = {
+
+          {
             contents: format_messages(messages),
+            tools: [{ google_search: {} }],
             generationConfig: {
               temperature: temperature
             }
           }
-          payload[:tools] = format_tools(tools) if tools.any?
-          payload
         end
 
         # Format methods can be private
