@@ -14,7 +14,7 @@ module RubyLLM
         def render_payload(messages, tools:, temperature:, model:, stream: false, schema: nil) # rubocop:disable Metrics/ParameterLists,Lint/UnusedMethodArgument
           @model = model # Store model for completion_url/stream_url
 
-          {
+          payload = {
             contents: format_messages(messages),
             tools: [{ google_search: {} }],
             generationConfig: {
