@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 module RubyLLM
-  VERSION = '1.5.1-patch2'
+  VERSION = '1.5.1-patch1'
 end

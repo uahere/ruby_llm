@@ -15,8 +15,7 @@ module RubyLLM
           payload = {
             model: model,
             messages: format_messages(messages),
-            stream: stream,
-            tools: [{ type: 'web_search_preview' }]
+            stream: stream
           }
 
           # Only include temperature if it's not nil (some models don't accept it)
